@@ -23,7 +23,7 @@ pipeline{
         stage('tf action'){
             steps{
                 echo "Terraform action is ---> ${action}"
-                sh 'terraform ${action} "tfplan" --auto-approve'
+                sh "terraform ${action} "tfplan" --auto-approve"
             }
         }
 
