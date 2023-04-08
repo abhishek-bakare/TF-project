@@ -167,3 +167,14 @@ resource "aws_security_group" "sg" {
     Name = "tcw_security_group"
   }
 }
+
+
+resource "aws_instance" "web_instance" {
+  ami           = "ami-02eb7a4783e7e9317"
+  instance_type = "t2.micro"
+  key_name      = "LinuxKey"
+
+  subnet_id                   = aws_subnet.public_subnet_1.id
+  vpc_security_group_ids      = [aws_security_group.sg.id]
+  associate_public_ip_address = true
+}

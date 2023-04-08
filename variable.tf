@@ -131,3 +131,4 @@ variable "database_subnets_cidr_2" {
   type = string
   default = "192.168.6.0/24"
 }
+
