@@ -22,8 +22,8 @@ pipeline{
 
         stage('tf action'){
             steps{
-                echo "Terraform action is ---> ${action}"
-                sh "terraform ${action} "tfplan" --auto-approve"
+                echo "Terraform action is ---> ${action} , ${plan}"
+                sh "terraform ${action} ${plan} --auto-approve"
             }
         }
 
